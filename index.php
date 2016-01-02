@@ -33,7 +33,6 @@ $fbData = file_get_contents($url);
 
 	<div class="col-xs-3"><img src="http://graph.facebook.com/537548537/picture?type=large" class="img-circle" alt="Responsive image"></div>
 	<div class="col-xs-6">
-		<p>{{ gender }}</p>
 		<a href="mailto:{{ email }}">{{ email }}</a>
 		<br /><br />
 		<a href="{{ link }}" class="btn btn-primary">View on Facebook</a>
