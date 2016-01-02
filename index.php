@@ -3,7 +3,7 @@
 $app_id = "553757138114424";
 $app_secret = "****";
 
-$url = "https://graph.facebook.com/10154654443738538?fields=id,name,email&access_token=" . $app_id . '|' . $app_secret;
+$url = "https://graph.facebook.com/10154654443738538?fields=id,name,email,link&access_token=" . $app_id . '|' . $app_secret;
 
 $fbData = file_get_contents($url);
 
@@ -14,7 +14,7 @@ $fbData = file_get_contents($url);
 
   <head>
     <meta charset="utf-8" />
-    <title>About Me</title>
+    <title>Contact Me</title>
     <link data-require="bootstrap-css@3.0.0" data-semver="3.0.0" rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" />
     <script data-require="angular.js@1.4.x" src="http://code.angularjs.org/1.4.3/angular.min.js" data-semver="1.4.3"></script>
 
@@ -27,26 +27,17 @@ $fbData = file_get_contents($url);
   </head>
   <body ng-controller="MainCtrl">
     <div class="container">
-      <h2>About {{ name }}</h2>
+      <h2>Contact {{ name }}</h2>
 
-      <div>
-        <button class="btn btn-primary">View on Facebook</button>
-      </div>
-      
-      <br />
+	<br />
 
-      <h4>
-        Hello<span ng-show="name">, {{ name }}</span>!
-      </h4>
-
-	<img src="http://graph.facebook.com/537548537/picture?type=large">
-
-      <div class="row">
-        <div class="col-md-6">
-          <h4 class="text-info">info-block</h4>
-          <div class="code-block" source="apiResJSON">code block here...</div>
-        </div>
-      </div>
+	<div class="col-xs-3"><img src="http://graph.facebook.com/537548537/picture?type=large" class="img-circle" alt="Responsive image"></div>
+	<div class="col-xs-6">
+		<p>{{ gender }}</p>
+		<a href="mailto:{{ email }}">{{ email }}</a>
+		<br /><br />
+		<a href="{{ link }}" class="btn btn-primary">View on Facebook</a>
+	</div>
 
     </div>
 
