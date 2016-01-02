@@ -7,5 +7,8 @@ app.controller('MainCtrl', function($scope) {
 	//$scope.push.apply($scope, parsedJSON);
 
 	$scope.name = parsedJSON['name'];
+	$scope.id = parsedJSON['id'];
+	$scope.email = parsedJSON['email'];
+	$scope.link = parsedJSON['link'];
 
 });
